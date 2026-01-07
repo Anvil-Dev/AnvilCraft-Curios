@@ -19,21 +19,9 @@ public class AnvilCraftCuriosClient {
     }
 
     public void onClientSetup(FMLClientSetupEvent event) {
-        CuriosRendererRegistry.register(
-            ModItems.ANVIL_HAMMER.get(),
-            () -> new GogglesCurioRenderer(Minecraft.getInstance().getEntityModels().bakeLayer(GogglesCurioRenderer.LAYER))
-        );
-        CuriosRendererRegistry.register(
-            ModItems.ROYAL_ANVIL_HAMMER.get(),
-            () -> new GogglesCurioRenderer(Minecraft.getInstance().getEntityModels().bakeLayer(GogglesCurioRenderer.LAYER))
-        );
-        CuriosRendererRegistry.register(
-            ModItems.EMBER_ANVIL_HAMMER.get(),
-            () -> new GogglesCurioRenderer(Minecraft.getInstance().getEntityModels().bakeLayer(GogglesCurioRenderer.LAYER))
-        );
-        CuriosRendererRegistry.register(
-            ModItems.IONOCRAFT_BACKPACK.get(),
-            IonoCraftBackpackCurioRenderer::new
-        );
+        CuriosRendererRegistry.register(ModItems.ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
+        CuriosRendererRegistry.register(ModItems.ROYAL_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
+        CuriosRendererRegistry.register(ModItems.EMBER_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
+        CuriosRendererRegistry.register(ModItems.IONOCRAFT_BACKPACK.get(), IonoCraftBackpackCurioRenderer::new);
     }
 }

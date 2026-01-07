@@ -3,12 +3,10 @@ package dev.anvilcraft.curios.renderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import dev.anvilcraft.curios.AnvilCraftCurios;
-import dev.dubhe.anvilcraft.AnvilCraft;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
@@ -28,8 +26,8 @@ public class GogglesCurioRenderer implements ICurioRenderer {
 
     private final HumanoidModel<LivingEntity> model;
 
-    public GogglesCurioRenderer(ModelPart part) {
-        this.model = new HumanoidModel<>(part);
+    public GogglesCurioRenderer() {
+        this.model = new HumanoidModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(GogglesCurioRenderer.LAYER));
     }
 
     @Override
