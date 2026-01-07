@@ -16,4 +16,8 @@ repositories {
             includeGroup "com.tterrag.registrate"
         }
     }
+    maven { // Curios API
+        name = "OctoStudios Maven"
+        url = uri("https://maven.octo-studios.com/releases")
+    }
 }

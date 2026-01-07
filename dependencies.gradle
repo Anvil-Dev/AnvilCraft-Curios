@@ -9,4 +9,7 @@ dependencies {
     // AnvilCraft
     implementation(libs.anvilcraft) { transitive = false }
     interfaceInjectionData(libs.anvilcraft) { transitive = false }
+
+    // Curios API
+    implementation(libs.curios)
 }
