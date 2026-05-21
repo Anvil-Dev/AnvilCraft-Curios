@@ -17,7 +17,7 @@ repositories {
         }
     }
     maven { // Curios API
-        name = "OctoStudios Maven"
-        url = uri("https://maven.octo-studios.com/releases")
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
     }
 }

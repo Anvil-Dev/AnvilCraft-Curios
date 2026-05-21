@@ -1,16 +1,17 @@
 package dev.anvilcraft.curios;
 
 import com.mojang.logging.LogUtils;
-import com.tterrag.registrate.Registrate;
+import dev.anvilcraft.lib.v2.registrum.Registrum;
 import dev.anvilcraft.curios.data.AddonDatagen;
 import dev.anvilcraft.curios.renderer.GogglesCurioRenderer;
+import dev.anvilcraft.lib.v2.util.InventoryUtil;
 import dev.dubhe.anvilcraft.api.amulet.AmuletManager;
 import dev.dubhe.anvilcraft.api.power.PowerGrid;
 import dev.dubhe.anvilcraft.init.item.ModItemTags;
 import dev.dubhe.anvilcraft.init.item.ModItems;
 import dev.dubhe.anvilcraft.item.AnvilHammerItem;
 import dev.dubhe.anvilcraft.item.IonoCraftBackpackItem;
-import dev.dubhe.anvilcraft.util.InventoryUtil;
+//import dev.dubhe.anvilcraft.util.InventoryUtil;
 import dev.dubhe.anvilcraft.util.TriggerUtil;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.core.BlockPos;
@@ -40,7 +41,7 @@ import java.util.Optional;
 public class AnvilCraftCurios {
     public static final String MOD_ID = "anvilcraft_curios";
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final Registrate REGISTRATE = Registrate.create(MOD_ID);
+    public static final Registrum REGISTRATE = Registrum.create(MOD_ID);
 
     public AnvilCraftCurios(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::setup);

@@ -1,12 +1,12 @@
 package dev.anvilcraft.curios.data.tag;
 
-import com.tterrag.registrate.providers.RegistrateTagsProvider;
+import dev.anvilcraft.lib.v2.registrum.providers.RegistrumTagsProvider;
 import dev.dubhe.anvilcraft.init.item.ModItemTags;
 import dev.dubhe.anvilcraft.init.item.ModItems;
 import net.minecraft.world.item.Item;
 
 public class AddonItemTagsHandler {
-    public static void init(RegistrateTagsProvider<Item> provider) {
+    public static void init(RegistrumTagsProvider<Item> provider) {
         provider.addTag(ModItemTags.CURIOS_HEAD)
             .replace(false)
             .addOptionalTag(ModItemTags.ANVIL_HAMMER);

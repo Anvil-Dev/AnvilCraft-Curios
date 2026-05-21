@@ -1,6 +1,6 @@
 package dev.anvilcraft.curios.data;
 
-import com.tterrag.registrate.providers.ProviderType;
+import dev.anvilcraft.lib.v2.registrum.providers.ProviderType;
 import dev.anvilcraft.curios.AnvilCraftCurios;
 import dev.anvilcraft.curios.data.lang.AddonLangHandler;
 import dev.anvilcraft.curios.data.tag.AddonItemTagsHandler;

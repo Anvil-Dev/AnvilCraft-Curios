@@ -1,6 +1,6 @@
 package dev.anvilcraft.curios.data.lang;
 
-import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.anvilcraft.lib.v2.registrum.providers.RegistrumLangProvider;
 
 public class AddonLangHandler {
     /**
@@ -8,7 +8,7 @@ public class AddonLangHandler {
      *
      * @param provider 提供器
      */
-    public static void init(RegistrateLangProvider provider) {
+    public static void init(RegistrumLangProvider provider) {
         provider.add("curios.identifier.ionocraft_backpack", "Ionocraft Backpack");
     }
 }

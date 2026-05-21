@@ -5,11 +5,10 @@ on:
     branches:
       - releases/**
     paths:
+      - gradle/scripts/**
       - src/**
-      - common/**
-      - fabric/**
-      - forge/**
       - build.gradle
+      - dependencies.gradle
       - gradle.properties
       - settings.gradle
 
