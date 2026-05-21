@@ -5,6 +5,7 @@ on:
     branches:
       - releases/**
     paths:
+      - .github/workflows/ci.yml
       - gradle/scripts/**
       - src/**
       - build.gradle
@@ -72,7 +73,7 @@ jobs:
         with:
           mod: build/libs/${{ steps.properties.outputs.mod_id }}-neoforge-${{ steps.version.outputs.version }}.jar
           extra-mods: |
-            anvilcraft:1.21.1-1.5.0+hotfix.1572
+            anvilcraft:1.21.1-1.6.0+snapshot.1712
             curios:9.5.1+1.21.1
 
       - name: publish neoforge mc mod
@@ -96,7 +97,7 @@ jobs:
 
           dependencies: |
             curios@9.5.1+1.21.1(required){modrinth:vvuO3ImH}{curseforge:309927}
-            anvilcraft@1.21.1-1.5.0(required){modrinth:vuISAWPc}{curseforge:986251}
+            anvilcraft:1.21.1-1.6.0+snapshot.1712(required){modrinth:vuISAWPc}{curseforge:986251}
 
           files: |
             build/libs/${{ steps.properties.outputs.mod_id }}-neoforge-${{ steps.version.outputs.version }}.jar
