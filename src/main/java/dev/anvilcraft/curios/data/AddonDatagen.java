@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static dev.anvilcraft.curios.AnvilCraftCurios.REGISTRATE;
 
-@EventBusSubscriber(modid = AnvilCraftCurios.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = AnvilCraftCurios.MOD_ID)
 public class AddonDatagen {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
