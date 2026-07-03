@@ -1,17 +1,13 @@
 package dev.anvilcraft.curios;
 
-import com.mojang.logging.LogUtils;
 import dev.anvilcraft.lib.v2.registrum.Registrum;
 import dev.anvilcraft.curios.data.AddonDatagen;
 import dev.anvilcraft.curios.renderer.GogglesCurioRenderer;
 import dev.anvilcraft.lib.v2.util.InventoryUtil;
-import dev.dubhe.anvilcraft.api.amulet.AmuletManager;
 import dev.dubhe.anvilcraft.api.power.PowerGrid;
-import dev.dubhe.anvilcraft.init.item.ModItemTags;
 import dev.dubhe.anvilcraft.init.item.ModItems;
 import dev.dubhe.anvilcraft.item.AnvilHammerItem;
 import dev.dubhe.anvilcraft.item.IonoCraftBackpackItem;
-//import dev.dubhe.anvilcraft.util.InventoryUtil;
 import dev.dubhe.anvilcraft.util.TriggerUtil;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.core.BlockPos;
@@ -27,7 +23,6 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.SlotResult;
@@ -40,10 +35,9 @@ import java.util.Optional;
 @Mod(AnvilCraftCurios.MOD_ID)
 public class AnvilCraftCurios {
     public static final String MOD_ID = "anvilcraft_curios";
-    public static final Logger LOGGER = LogUtils.getLogger();
     public static final Registrum REGISTRATE = Registrum.create(MOD_ID);
 
-    public AnvilCraftCurios(IEventBus modEventBus, ModContainer modContainer) {
+    public AnvilCraftCurios(IEventBus modEventBus, ModContainer ignored) {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::onLayerRegister);
         modEventBus.addListener(this::registerCapabilities);
@@ -60,7 +54,7 @@ public class AnvilCraftCurios {
             CuriosApi.getCuriosInventory(player).map(this::isAnvilHammerWearing).orElse(false)
         );
         IonoCraftBackpackItem.addStackProvider(player ->
-            CuriosApi.getCuriosInventory(player).map(this::getIonoCraftBackpackWearing).orElse(ItemStack.EMPTY)
+            CuriosApi.getCuriosInventory(player).map(this::getIonocraftBackpackWearing).orElse(ItemStack.EMPTY)
         );
         InventoryUtil.compatConsumer = InventoryUtil.compatConsumer.andThen(
             (items, living) -> CuriosApi.getCuriosInventory(living).ifPresent(
@@ -68,15 +62,6 @@ public class AnvilCraftCurios {
                     .forEach(result -> items.add(result.stack()))
             )
         );
-        AmuletManager.INSTANCE.registerFinders((player, holders) -> {
-            if (CuriosApi.getCuriosInventory(player).isPresent()) {
-                List<SlotResult> results = CuriosApi.getCuriosInventory(player).get()
-                    .findCurios(stack -> stack.is(ModItemTags.AMULET));
-                for (SlotResult result : results) {
-                    AmuletManager.processFoundStack(result.stack(), holders);
-                }
-            }
-        });
 //        if (ModList.get().isLoaded("create")) {
 //            GogglesItem.addIsWearingPredicate(player ->
 //                CuriosApi.getCuriosInventory(player).map(this::isAnvilHammerWearing).orElse(false)
@@ -100,7 +85,7 @@ public class AnvilCraftCurios {
         return !itemHandler.findCurios(it -> it.getItem() instanceof AnvilHammerItem).isEmpty();
     }
 
-    private ItemStack getIonoCraftBackpackWearing(ICuriosItemHandler itemHandler) {
+    private ItemStack getIonocraftBackpackWearing(ICuriosItemHandler itemHandler) {
         List<SlotResult> curios = itemHandler.findCurios(it -> it.getItem() instanceof IonoCraftBackpackItem);
         if (!curios.isEmpty()) {
             return curios.getFirst().stack();
