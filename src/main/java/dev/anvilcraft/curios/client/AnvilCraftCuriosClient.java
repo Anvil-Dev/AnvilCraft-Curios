@@ -4,7 +4,6 @@ import dev.anvilcraft.curios.AnvilCraftCurios;
 import dev.anvilcraft.curios.renderer.GogglesCurioRenderer;
 import dev.anvilcraft.curios.renderer.IonoCraftBackpackCurioRenderer;
 import dev.dubhe.anvilcraft.init.item.ModItems;
-import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -21,7 +20,9 @@ public class AnvilCraftCuriosClient {
     public void onClientSetup(FMLClientSetupEvent event) {
         CuriosRendererRegistry.register(ModItems.ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
         CuriosRendererRegistry.register(ModItems.ROYAL_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
+        CuriosRendererRegistry.register(ModItems.FROST_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
         CuriosRendererRegistry.register(ModItems.EMBER_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
+        CuriosRendererRegistry.register(ModItems.TRANSCENDENCE_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
         CuriosRendererRegistry.register(ModItems.IONOCRAFT_BACKPACK.get(), IonoCraftBackpackCurioRenderer::new);
     }
 }

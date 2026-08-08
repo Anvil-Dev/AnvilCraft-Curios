@@ -88,7 +88,7 @@ jobs:
 
           dependencies: |
             curios@9.5.1+1.21.1(required){modrinth:vvuO3ImH}{curseforge:309927}
-            anvilcraft:1.21.1-1.6.0+snapshot.1961(required){modrinth:vuISAWPc}{curseforge:986251}
+            anvilcraft:1.21.1-1.6.0+snapshot.2127(required){modrinth:vuISAWPc}{curseforge:986251}
 
           files: |
             build/libs/${{ steps.properties.outputs.mod_id }}-neoforge-${{ steps.version.outputs.version }}.jar

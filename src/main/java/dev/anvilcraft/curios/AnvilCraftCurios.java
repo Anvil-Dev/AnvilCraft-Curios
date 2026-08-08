@@ -1,8 +1,8 @@
 package dev.anvilcraft.curios;
 
-import dev.anvilcraft.lib.v2.registrum.Registrum;
 import dev.anvilcraft.curios.data.AddonDatagen;
 import dev.anvilcraft.curios.renderer.GogglesCurioRenderer;
+import dev.anvilcraft.lib.v2.registrum.Registrum;
 import dev.anvilcraft.lib.v2.util.InventoryUtil;
 import dev.dubhe.anvilcraft.api.power.PowerGrid;
 import dev.dubhe.anvilcraft.init.item.ModItems;
@@ -75,7 +75,9 @@ public class AnvilCraftCurios {
             (stack, context) -> () -> stack,
             ModItems.ANVIL_HAMMER,
             ModItems.ROYAL_ANVIL_HAMMER,
+            ModItems.FROST_ANVIL_HAMMER,
             ModItems.EMBER_ANVIL_HAMMER,
+            ModItems.TRANSCENDENCE_ANVIL_HAMMER,
             ModItems.IONOCRAFT_BACKPACK
         );
     }
