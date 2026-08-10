@@ -63,5 +63,5 @@ jobs:
         with:
           mod: build/libs/${{ steps.properties.outputs.mod_id }}-neoforge-${{ steps.version.outputs.version }}.jar
           extra-mods: |
-            anvilcraft:1.21.1-1.6.0+snapshot.2127
+            anvilcraft:1.21.1-1.6.0+snapshot.2133
             curios:9.5.1+1.21.1

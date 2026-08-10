@@ -2,7 +2,7 @@ package dev.anvilcraft.curios.client;
 
 import dev.anvilcraft.curios.AnvilCraftCurios;
 import dev.anvilcraft.curios.renderer.GogglesCurioRenderer;
-import dev.anvilcraft.curios.renderer.IonoCraftBackpackCurioRenderer;
+import dev.anvilcraft.curios.renderer.IonocraftBackpackCurioRenderer;
 import dev.dubhe.anvilcraft.init.item.ModItems;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -23,6 +23,6 @@ public class AnvilCraftCuriosClient {
         CuriosRendererRegistry.register(ModItems.FROST_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
         CuriosRendererRegistry.register(ModItems.EMBER_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
         CuriosRendererRegistry.register(ModItems.TRANSCENDENCE_ANVIL_HAMMER.get(), GogglesCurioRenderer::new);
-        CuriosRendererRegistry.register(ModItems.IONOCRAFT_BACKPACK.get(), IonoCraftBackpackCurioRenderer::new);
+        CuriosRendererRegistry.register(ModItems.IONOCRAFT_BACKPACK.get(), IonocraftBackpackCurioRenderer::new);
     }
 }

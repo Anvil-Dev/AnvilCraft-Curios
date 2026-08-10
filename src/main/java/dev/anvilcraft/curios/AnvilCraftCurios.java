@@ -7,7 +7,7 @@ import dev.anvilcraft.lib.v2.util.InventoryUtil;
 import dev.dubhe.anvilcraft.api.power.PowerGrid;
 import dev.dubhe.anvilcraft.init.item.ModItems;
 import dev.dubhe.anvilcraft.item.AnvilHammerItem;
-import dev.dubhe.anvilcraft.item.IonoCraftBackpackItem;
+import dev.dubhe.anvilcraft.item.IonocraftBackpackItem;
 import dev.dubhe.anvilcraft.util.TriggerUtil;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.core.BlockPos;
@@ -53,7 +53,7 @@ public class AnvilCraftCurios {
         AnvilHammerItem.addIsWearingPredicate(player ->
             CuriosApi.getCuriosInventory(player).map(this::isAnvilHammerWearing).orElse(false)
         );
-        IonoCraftBackpackItem.addStackProvider(player ->
+        IonocraftBackpackItem.addStackProvider(player ->
             CuriosApi.getCuriosInventory(player).map(this::getIonocraftBackpackWearing).orElse(ItemStack.EMPTY)
         );
         InventoryUtil.compatConsumer = InventoryUtil.compatConsumer.andThen(
@@ -88,7 +88,7 @@ public class AnvilCraftCurios {
     }
 
     private ItemStack getIonocraftBackpackWearing(ICuriosItemHandler itemHandler) {
-        List<SlotResult> curios = itemHandler.findCurios(it -> it.getItem() instanceof IonoCraftBackpackItem);
+        List<SlotResult> curios = itemHandler.findCurios(it -> it.getItem() instanceof IonocraftBackpackItem);
         if (!curios.isEmpty()) {
             return curios.getFirst().stack();
         }

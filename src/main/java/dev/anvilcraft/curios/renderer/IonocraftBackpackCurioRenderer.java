@@ -15,12 +15,11 @@ import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
-import static dev.dubhe.anvilcraft.item.IonoCraftBackpackItem.TEXTURE;
-import static dev.dubhe.anvilcraft.item.IonoCraftBackpackItem.TEXTURE_OFF;
-import static dev.dubhe.anvilcraft.item.IonoCraftBackpackItem.getFlightTime;
+import static dev.dubhe.anvilcraft.item.IonocraftBackpackItem.TEXTURE;
+import static dev.dubhe.anvilcraft.item.IonocraftBackpackItem.TEXTURE_OFF;
+import static dev.dubhe.anvilcraft.item.IonocraftBackpackItem.getFlightTime;
 
-public class IonoCraftBackpackCurioRenderer implements ICurioRenderer {
-
+public class IonocraftBackpackCurioRenderer implements ICurioRenderer {
     @Override
     public <T extends LivingEntity, M extends EntityModel<T>> void render(
         ItemStack stack,
